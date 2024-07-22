@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.btn-primary');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        buttons.forEach(button => {
+          button.addEventListener('click', (event) => {
+            const item = {
+              name: event.target.parentElement.querySelector('h3').textContent,
+              price: event.target.parentElement.querySelector('h4').textContent,
+            };
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart!');
+          });
+        });
+      });
+    </script>
+    
+    
+    
+    <style>
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #030303;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .navbar-brand .cafe-de-latte {
+            font-size: 50px; 
+            font-family: cursive; 
+        }
+        .menu-section {
+            padding: 50px 0;
+        }
+        .menu-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .menu-item h3 {
+            margin-top: 15px;
+            font-size: 24px;
+        }
+        .menu-item p {
+            font-size: 16px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Beige Minimalist Initial Font Floral Agency Logo.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
+        <span class="cafe-de-latte">Cafe de Latte</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="container menu-section">
+    <h1 class="text-center">Menu</h1>
+    <div class="row">
+      <div class="col-md-4 menu-item">
+        <img src="cake1.jpg" alt="blueberry cake" height="200" width="200">
+        <h3>Blueberry frosting cake</h3>
+        <h4>@1200</h4>
+        <p>Single tier blueberry cake. This is a delicious dish that you will love.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="col-md-4 menu-item">
+        <img src="cake3.jpg" alt="cake2">
+        <h3>Chocolate pudding cake</h3>
+        <h4>@899</h4>
+        <p> Chocolate pudding cake for sweet tooth . A tasty treat for any time of the day.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="col-md-4 menu-item">
+        <img src="blueberries cheesecake.jpg" alt="blueberries cheesecake">
+        <h3>Blueberry cheesecake</h3>
+        <h4>@1190</h4>
+        <p>A perfect choice for dessert.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 menu-item">
+        <img src="cupcakes.jpg" alt="cupcakes">
+        <h3>Delicious heart cupcakes </h3>
+        <h4>@199</h4>
+        <p>Enjoy this delightful cupcakes with your friends.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="col-md-4 menu-item">
+        <img src="cupcakes2.jpg" alt="cupcakes" height="200" width="200" >
+        <h3>Cherry cupcakes</h3>
+        <h4>@149</h4>
+        <p>A perfect choice for dessert.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="col-md-4 menu-item">
+        <img src="ham-4955064_640.jpg" alt="Menu Item 1" height="300" width="300">
+        <h3>Veggie delight sandwhich</h3>
+        <h4>@199</h4>
+        <p>This is a delicious dish that you will love.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="col-md-4 menu-item">
+        <img src="burger.jpg" alt="Menu Item 2" height="300" width="300">
+        <h3>Veggie whopper</h3>
+        <h4>@249</h4>
+        <p>A tasty treat for any time of the day.</p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="col-md-4 menu-item">
+        <img src="pizza1.jpg" alt="Menu Item 3" height="300" width="300">
+        <h3>cheesy tomato pizza</h3>
+        <h4>@649</h4>
+        <p>A delicious pizza that you will love.</p>
+
+        <button class="btn btn-primary">Add to Cart</button>
+        </div>
+        <div class="col-md-4 menu-item">
+          <img src="cup-829527_640.jpg" alt="Menu Item 3" height="300" width="300">
+          <h3>lipton green tea</h3>
+          <h4>@100</h4>
+          <p>A delicious tea that you will love.</p>
+          <button class="btn btn-primary">Add to Cart</button>
+          </div>
+          <div class="col-md-4 menu-item">
+            <img src="tea-cup-2107599_640.jpg" alt="Menu Item 3" height="300" width="300">
+            <h3>hibiscus tea</h3>
+            <h4>@149</h4>
+            <p>A delicious tea that you will love.</p>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+            <div class="col-md-4 menu-item">
+              <img src="teacup-7526022_640.webp" alt="Menu Item 3" height="300" width="300">
+              <h3>Chef's special aroma tea</h3>
+              <h4>@199</h4>
+              <p>A delicious tea that you will love.</p>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+              <div class="col-md-4 menu-item">
+                <img src="coffee-3727673_640.jpg" alt="Menu Item 3" height="200" width="200">
+                <h3>mocha coffee</h3>
+                <h4>@240</h4>
+                <p>A delicious pizza that you will love.</p>
+                <button class="btn btn-primary">Add to Cart</button>
+                </div>
+        
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
+
+
